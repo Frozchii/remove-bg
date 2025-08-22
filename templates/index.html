@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Background</title>
+</head>
+<body>
+    <div>
+        <h1>Remove Background</h1>
+        <form enctype="multipart/form-data" method="POST">
+        <input type="file" name="image" accept="image/*" required>
+        <button type="submit">Remove background</button>
+        </form>
+
+        {% if image_data %}
+        <div class="result">
+            <img src="data:image/png;base64, {{image_data}}" alt="process image">
+            <a href="data:image/png;base64, {{image_data}}" download="remove-bg" class="download"> download image</a>
+        </div>
+
+        {% endif %}
+    </div>
+</body>
+</html>
